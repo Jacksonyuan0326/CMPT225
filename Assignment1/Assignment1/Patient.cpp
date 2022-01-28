@@ -6,8 +6,8 @@
  *                  This care card number must have 10 digits.
  *                  This care card number cannot be modified.
  *
- * Author: (For you to fill)
- * Date: (For you to fill)
+ * Author: Jackson Yuan 301387501
+ * Date: Feb 4th,2022
  */
 
  // You can add #include statements if you wish.
@@ -19,8 +19,8 @@
 // Description: Create a patient with a care card number of "0000000000". 
 // Postcondition: All data members set to "To be entered", 
 //                except the care card number which is set to "0000000000".       
-Patient::Patient() {
-
+Patient::Patient() 
+{
 	// You need to complete this method.
 	name = "To be entered";
 	address = "To be entered";
@@ -40,7 +40,7 @@ Patient::Patient(string aCareCard) {
 	address = "To be entered";
 	phone = "To be entered";
 	email = "To be entered";
-	if (careCard.size() != 10)
+	if (aCareCard.size() != 10)
 		careCard = "0000000000";
 	else
 		careCard = aCareCard;
@@ -48,60 +48,69 @@ Patient::Patient(string aCareCard) {
 
 // All other parameterized constructors -> You need to implement these methods.
 
+Patient::Patient(const Patient& patient)
+{
+	this->name = patient.name;
+	this->address = patient.address;
+	this->phone = patient.phone;
+	this->email = patient.email;
+	this->careCard = patient.careCard;
+}
+
 // Getters and setters -> You need to implement these methods.
 // Getters and setters
 	// Description: Returns patient's name.
 string Patient::getName() const
 {
-
+	return name;
 }
 
 // Description: Returns patient's address.
 string Patient::getAddress() const
 {
-
+	return address;
 }
 
 // Description: Returns patient's phone.
 string Patient::getPhone() const
 {
-
+	return phone;
 }
 
 // Description: Returns patient's email.
 string Patient::getEmail() const
 {
-
+	return email;
 }
 
 // Description: Returns patient's care card.
 string Patient::getCareCard() const
 {
-
+	return careCard;
 }
 
 // Description: Sets the patient's name.
 void Patient::setName(const string aName)
 {
-
+	name = aName;
 }
 
 // Description: Sets the patient's address.
 void Patient::setAddress(const string anAddress)
 {
-
+	address = anAddress;
 }
 
 // Description: Sets the patient's phone.
 void Patient::setPhone(const string aPhone)
 {
-
+	phone = aPhone;
 }
 
 // Description: Sets the patient's email.
 void Patient::setEmail(const string anEmail)
 {
-
+	email = anEmail;
 }
 
 

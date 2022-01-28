@@ -30,9 +30,9 @@ private:
 	 * nor can you change them.
 	 */
 
-	(For you to fill)                  // constant MAX_ELEMENTS
-		(For you to fill)                  // Data structure of elements
-		int elementCount;                  // Number of elements in the data structure
+	const int MAX_ELEMENTS = 100;               // constant MAX_ELEMENTS
+	Patient* patientList;          // Data structure of elements
+	int elementCount;                  // Number of elements in the data structure
 	int capacity;                      // Actual maximum capacity of data structure   
 
 public:

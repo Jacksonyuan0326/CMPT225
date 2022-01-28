@@ -53,6 +53,7 @@ public:
 	Patient(string aCareCard);
 
 	// Add more parameterized constructors here!
+	Patient(const Patient& patient);
 
 	// Getters and setters
 	// Description: Returns patient's name.
@@ -101,4 +102,4 @@ public:
 	// Description: Prints the content of "this".
 	friend ostream& operator<<(ostream& os, const Patient& p);
 
-}
+};
