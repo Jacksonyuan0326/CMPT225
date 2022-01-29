@@ -64,12 +64,34 @@ void List::removeAll()
 
 Patient* List::search(const Patient& target)
 {
+  Patient* temp = NULL;
   for(int i = 0; i < patientList.elementCount; i++)
     if(patientList[i] == target)
-    return
+      temp = patientList[i];
+  return temp; 
 }
 
 void List::printList()
 {
+  Bubble_sort_descend(this->patientList);
+  for(int i =0; i < patientList.elementCount; i++)
+  {
+    cout << patientList[i] << endl;
+  }
+}
 
+//Sorting function(descending)
+void Bubble_sort_descend(const List& target)
+{
+  for(int i = 0; i < target.getElementCount(); i++)
+    for(int j = 1; j < target.getElementCount(); j++)
+    {
+      if(target[i] > target[j])//if the order is descending
+        continue;
+        else{
+          Patient temp = target[i];//bubble sorting to swap in order to get descending array
+          target[i] = target[j];
+          target[j] = temp;
+        }
+    }
 }

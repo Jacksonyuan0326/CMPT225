@@ -34,6 +34,7 @@ private:
 	Patient* patientList;          // Data structure of elements
 	int elementCount;                  // Number of elements in the data structure
 	int capacity;                      // Actual maximum capacity of data structure   
+  void Bubble_sort_descend(const List& target); //help to sort to descending order
 
 public:
 
