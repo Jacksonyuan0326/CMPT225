@@ -1,4 +1,8 @@
-﻿  List.cpp
-  WalkerIn.cpp
-  正在生成代码...
+﻿  WalkerIn.cpp
+F:\学习文件\CMPT225\anne assignment\Assignment1\Assignment1\WalkerIn.cpp(10,20): warning C4018: “<”: 有符号/无符号不匹配
+F:\学习文件\CMPT225\anne assignment\Assignment1\Assignment1\WalkerIn.cpp(11,21): warning C4018: “<”: 有符号/无符号不匹配
+F:\学习文件\CMPT225\anne assignment\Assignment1\Assignment1\WalkerIn.cpp(16,19): warning C4018: “<”: 有符号/无符号不匹配
+F:\学习文件\CMPT225\anne assignment\Assignment1\Assignment1\WalkerIn.cpp(21,19): warning C4018: “<”: 有符号/无符号不匹配
+F:\学习文件\CMPT225\anne assignment\Assignment1\Assignment1\WalkerIn.cpp(119,21): warning C4390: “;”: 找到空的受控语句；这是否是有意的?
+F:\学习文件\CMPT225\anne assignment\Assignment1\Assignment1\WalkerIn.cpp(62): warning C4715: “enterAPatient”: 不是所有的控件路径都返回值
   Assignment1.vcxproj -> F:\学习文件\CMPT225\anne assignment\Assignment1\Debug\Assignment1.exe

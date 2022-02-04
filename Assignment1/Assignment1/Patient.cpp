@@ -47,7 +47,13 @@ Patient::Patient(string aCareCard) {
 }
 
 // All other parameterized constructors -> You need to implement these methods.
-
+Patient(const string aName, const string anAddress, const string aPhone, const string anEmail)
+{
+	this->name = aName;
+	this->address = anAddress;
+	this->Phone = aPhone;
+	this->email = anEmail;
+}
 Patient::Patient(const Patient& patient)
 {
 	this->name = patient.name;

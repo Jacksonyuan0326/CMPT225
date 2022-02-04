@@ -7,8 +7,8 @@
  *                  This care card number must have 10 digits.
  *                  This care card number cannot be modified.
  *
- * Author: (For you to fill)
- * Date: (For you to fill)
+ * Author: Jackson Yuan
+ * Date: Feb 4,2022
  */
 
 #pragma once
@@ -53,6 +53,7 @@ public:
 	Patient(string aCareCard);
 
 	// Add more parameterized constructors here!
+	Patient(const string& aName, const string& anAddress, const string& aPhone, const string& anEmail);
 	Patient(const Patient& patient);
 
 	// Getters and setters
