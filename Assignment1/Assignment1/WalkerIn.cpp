@@ -27,11 +27,12 @@ string checkString(const string& str)
 }
 Patient enterAPatient(string name, string address, string phone, string careCard, string email)
 {
-	Patient p1;
 	cout << "Please enter the carecard number for patient!" << endl;
 	cin >> careCard;
+	Patient p1(careCard);
 	cout << "Would you like to add more information for this patient? Y or N." << endl;
 	string ans;
+	cin >> ans;
 	if (ans == "N")
 		return p1;
 	
