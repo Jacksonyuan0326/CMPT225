@@ -53,7 +53,7 @@ public:
 	Patient(string aCareCard);
 
 	// Add more parameterized constructors here!
-	Patient(const string& aName, const string& anAddress, const string& aPhone, const string& anEmail);
+	Patient(const string& aName, const string& anAddress, const string& aPhone, const string& aCareCard, const string& anEmail);
 	Patient(const Patient& patient);
 
 	// Getters and setters
