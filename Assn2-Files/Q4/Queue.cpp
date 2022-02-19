@@ -4,8 +4,8 @@
  * Description: Implementation of an int sequence with enqueue/dequeue ...
  * Class Invariant: ... in FIFO order
  *
- * Author:
- * Date:
+ * Author: YUYUAN 301387501
+ * Date:FEB 18, 2022
  */
  
 #include "Queue.h"
@@ -29,29 +29,53 @@ Queue::~Queue()
 void Queue::enqueue(int x) {
 	// check whether the capacity is full
 	//if full, double array size and copy the elements of old array to the new array
-	if (elementCount+1 == capacity)
+	if (elementCount+1 >= capacity)
 	{
 		int* temp = new int[2 * capacity];
 		for (int i = 0; i < elementCount; i++)
 			temp[i] = elements[i];
 		temp[elementCount] = x;
-		~Queue();
+		delete[]elements;
 		elements = temp;
 		backindex++;
 		elementCount++;
 	}
+	else{
 	//else it will direct insert
     elementCount++;
     elements[backindex] = x;
     backindex = (backindex + 1) % capacity;
+	}
 } 
 
 
 // Description:  Removes the frontmost element (O(1))
-// Precondition:  Queue not empty
+// Precondition:  Queue not empty, capacity should greater than INITIAL_CAPACITY
+// Postcondition: will half capacity if the elements is less than 1/4 current capacity, but resized capacity should greater than INITIAL_CAPACITY
 void Queue::dequeue() {
-    elementCount--;
-    frontindex = (frontindex + 1) % capacity;
+	if(isEmpty())
+		return;
+	int* temp;
+	if(capacity/2 < INITIAL_CAPACITY) // if the half of capacity is less than INITIAL_CAPACITY
+	{
+		temp = new int[INITIAL_CAPACITY>capacity?INITIAL_CAPACITY:capacity];
+		for(int i = 0; i < elementCount - 1; i++)
+			temp[i] = elements[i];
+		delete[]elements;
+		elements = temp;
+		capacity = INITIAL_CAPACITY>capacity?INITIAL_CAPACITY:capacity;
+	}
+	else if(elementCount <= (capacity/4) && capacity/2 >= INITIAL_CAPACITY)
+	{
+		temp = new int[capacity/2];
+		for(int i =0; i < elementCount - 1; i++)
+			temp[i] = elements[i];
+		delete[]elements;
+		temp = elements;
+		capacity/=2;
+		backindex--;
+	}
+
 } 
 
 
@@ -66,7 +90,6 @@ int Queue::peek() const {
 bool Queue::isEmpty() const {
     return elementCount == 0;
 }
-
 
 
 

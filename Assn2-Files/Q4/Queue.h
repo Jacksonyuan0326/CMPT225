@@ -4,8 +4,8 @@
  * Description: Implementation of an int sequence with enqueue/dequeue ...
  * Class Invariant: ... in FIFO order
  *
- * Author:
- * Date:
+ * Author: YU YUAN 301387501
+ * Date: Feb 18, 2022
  */
   
 class Queue {
@@ -22,7 +22,7 @@ class Queue {
     public:
         // Description:  Constructor
         Queue();
-
+        ~Queue();
 
         // Description:  Inserts element x at the back (O(1))
         void enqueue(int x);
@@ -41,5 +41,4 @@ class Queue {
         // Description:  Returns true if and only if queue empty (O(1))
         bool isEmpty() const;
 };
-
 
