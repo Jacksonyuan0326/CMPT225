@@ -22,11 +22,11 @@ Stack::Stack()
     tail = nullptr;//make headnode and tailnode both to nullptr
 }
 
-// Description:  
-// Postcondition:  
+// Description:  Destrcuctor
+// Postcondition:  will de-allocated the elements pointer
 Stack::~Stack()
 {
-	while (head != NULL)
+	while (head != nullptr)
 		pop();
 }
 
@@ -37,31 +37,54 @@ void Stack::push(int x)
 {
     StackNode* newNode = new StackNode();  //create a new StackNode for temp in the heap
     newNode->data = x; //assign value to the newNode
-    newNode->next = tail;  //make tailnode reference pointer to newNde
-    tail = newNode; //make newNode be the tailnode
+    if(isEmpty()){
+        head = newNode;
+        tail = newNode;
+    }
+    else{
+        tail->next = newNode;  //make tailnode next pointer to newNde
+        tail = newNode; //make newNode be the tailnode
+    }
 }
 
 /*Big-O: O(n) because delete one elements will need O(1) operation
 		delete n elements will need O(n) operation*/
 // Description:  Remove and return element at the top of the stack.
-//Pre-condition: if the stack is not empty
-//Postcondition: return the value of the top node and return NULL if the stack is empty
+// Pre-condition: if the stack is not empty
+// Postcondition: return the value of the top node and return NULL if the stack is empty
 int Stack::pop()
 {
     if(isEmpty())
       return NULL;
-    StackNode* newNode =  tail;
-    tail = newNode->next;
-    delete[]newNode;
+    else if(head == tail){
+            int data = head->data;
+            delete[]head;
+            head = NULL;
+            tail == NULL;
+            return data;
+    }
+    else{// len > 1
+        StackNode* curNode = this->head;
+        while(curNode->next->next != NULL)
+        {
+            curNode = curNode->next;
+        }
+        int data = curNode->next->data;
+        delete[]tail;
+        tail = curNode;
+        curNode->next = NULL;
+        return data;
+    }
 }
 
 
 // Description:  Return the topmost element of the stack.
-// Precondition:  
-// Postcondition:  
+// Precondition:  if stack is not empty
+// Postcondition: return the value of the top element, return NULL if empty
 int Stack::peek() const
 { 
-    if(isEmpty()) return NULL;
+    if(isEmpty()) 
+        return NULL;
     return tail->data;
 }
 

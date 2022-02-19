@@ -4,8 +4,8 @@
  * Description: Implementation of an int sequence with push/pop ...
  * Class Invariant: ... in a LIFO order
  *
- * Author:
- * Date:
+ * Author: Yu Yuan 301387501
+ * Date: FEB 16, 2022
  */
  
 class Stack {
