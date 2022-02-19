@@ -64,8 +64,10 @@ void Queue::dequeue() {
 		delete[]elements;
 		elements = temp;
 		capacity = INITIAL_CAPACITY>capacity?INITIAL_CAPACITY:capacity;
+		elementCount--;
+		backindex--;
 	}
-	else if(elementCount <= (capacity/4) && capacity/2 >= INITIAL_CAPACITY)
+	/*else if(elementCount <= (capacity/4) && capacity/2 >= INITIAL_CAPACITY)
 	{
 		temp = new int[capacity/2];
 		for(int i =0; i < elementCount - 1; i++)
@@ -73,6 +75,19 @@ void Queue::dequeue() {
 		delete[]elements;
 		temp = elements;
 		capacity/=2;
+		backindex--;
+	}*/
+	
+	if(elementCount < capacity/4 && capacity/2 > INITIAL_CAPACITY)
+	{
+		temp = new int[capacity/2];
+		for(int i = 0; i < elementCount - 1; i++)
+			{ 
+				temp[i] = elements[i];//copy n -1 elements to new array
+			}
+		delete[]elements;
+		elements = temp;
+		elementCount--;
 		backindex--;
 	}
 
